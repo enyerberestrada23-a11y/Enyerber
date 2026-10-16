@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dirección de arte · Tesorería Filadelfia I</title>
+<meta name="theme-color" content="#04200f">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+<style>
+:root{
+  /* Color: sacado del logo */
+  --bosque:#04200f; --bosque-2:#073d1e; --bosque-3:#0b5a2c;
+  --menta:#3fd69b; --menta-clara:#8ff0c6; --lima:#c8f26a;
+  --ink:#f2fbf6; --muted:#a9cdb9; --line:rgba(143,240,198,.16);
+  --vidrio:rgba(255,255,255,.055); --vidrio-2:rgba(255,255,255,.09);
+  --cta:#c8f26a; --cta-ink:#04200f; --rojo:#ff8a8a;
+  --font-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --font-body:"Figtree",system-ui,sans-serif;
+  /* Forma: el marco del logo es recto con cortes en diagonal */
+  --r-xl:26px; --r-lg:20px; --r-md:14px; --r-pill:999px;
+  --angulo:-28deg;
+  /* Movimiento: firme, limpio, con un brinco corto */
+  --ease:cubic-bezier(.25,1,.5,1); --ease-io:cubic-bezier(.76,0,.24,1); --ease-pop:cubic-bezier(.34,1.4,.64,1);
+  --dur:.9s; --t-hover:.35s;
+  --gutter:clamp(16px,4vw,40px); --maxw:1240px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font:16px/1.5 var(--font-body);color:var(--ink);background:var(--bosque);overflow-x:clip;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit}
+
+/* ===== Fondo vivo: bosque con brillo menta ===== */
+.cielo{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(70% 50% at 85% 0%,rgba(63,214,155,.22),transparent 70%),
+             radial-gradient(60% 50% at 0% 100%,rgba(200,242,106,.10),transparent 70%),
+             linear-gradient(180deg,var(--bosque-2),var(--bosque) 60%)}
+
+/* ===== PORTADA: el informe ===== */
+.portada{position:relative;max-width:var(--maxw);margin:0 auto;padding:16px var(--gutter) 28px;display:grid;gap:18px;overflow:hidden}
+@media(min-width:960px){.portada{grid-template-columns:96px 1fr;padding-top:28px;padding-bottom:48px;align-content:start}}
+
+/* Franjas diagonales del logo */
+.franjas{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.franjas i{position:absolute;left:-20%;height:var(--h);width:140%;top:var(--y);background:var(--c);border-radius:4px;transform:rotate(var(--angulo));opacity:var(--o,1)}
+.franjas i:nth-child(1){--y:12%;--h:10px;--c:var(--lima);--o:.9}
+.franjas i:nth-child(2){--y:17%;--h:3px;--c:var(--menta-clara);--o:.55}
+.franjas i:nth-child(3){--y:58%;--h:22px;--c:var(--menta);--o:.10}
+.franjas i:nth-child(4){--y:64%;--h:4px;--c:var(--lima);--o:.35}
+
+/* Riel lateral (escritorio) */
+.riel{display:none;position:sticky;top:28px;z-index:2;flex-direction:column;align-items:center;gap:10px;padding:14px 0;border-radius:var(--r-pill);
+  background:linear-gradient(180deg,rgba(63,214,155,.22),rgba(255,255,255,.04));border:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);height:max-content}
+@media(min-width:960px){.riel{display:flex}}
+.riel .sello{width:60px;height:60px;border-radius:18px;background:var(--bosque) url(img/logo.png) center/135% no-repeat;border:1px solid var(--line);margin-bottom:8px;box-shadow:0 8px 24px -6px rgba(0,0,0,.6)}
+.riel button{width:56px;height:56px;border-radius:50%;border:0;background:var(--vidrio);display:grid;place-items:center;cursor:pointer;transition:background var(--t-hover) var(--ease),color var(--t-hover)}
+.riel button:hover{background:var(--vidrio-2)}
+.riel button.on{background:var(--ink);color:var(--bosque)}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.zona{position:relative;z-index:1;display:grid;gap:16px;min-width:0}
+.top{display:flex;align-items:center;gap:12px}
+.top .sello{width:46px;height:46px;border-radius:14px;background:var(--bosque) url(img/logo.png) center/135% no-repeat;border:1px solid var(--line);flex:none}
+@media(min-width:960px){.top .sello{display:none}}
+.top h1{margin:0;font:800 clamp(1.05rem,3.6vw,2rem)/1.05 var(--font-display);letter-spacing:-.02em}
+.top p{margin:2px 0 0;color:var(--muted);font-size:.85rem}
+.mes{margin-left:auto;display:flex;align-items:center;gap:4px;padding:4px;border-radius:var(--r-pill);background:var(--vidrio);border:1px solid var(--line)}
+.mes button{width:44px;height:44px;border-radius:50%;border:0;background:none;cursor:pointer;font-size:1.1rem}
+.mes b{font:700 .85rem var(--font-body);padding:0 6px;white-space:nowrap}
+@media(max-width:420px){.mes b{display:none}}
+
+/* Bento */
+.bento{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.bento{grid-template-columns:1.25fr 1fr}}
+.card{position:relative;border-radius:var(--r-xl);padding:20px;background:linear-gradient(160deg,var(--vidrio-2),rgba(255,255,255,.025));border:1px solid var(--line);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 60px -30px rgba(0,0,0,.7);min-width:0}
+.eti{display:inline-flex;align-items:center;gap:8px;font:700 .72rem var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.eti::before{content:"";width:14px;height:4px;border-radius:2px;background:var(--lima);transform:skewX(-28deg)}
+
+/* Tarjeta protagonista: saldo final con el marco del logo */
+.ancho{grid-column:1/-1}
+.saldo{grid-row:span 2;background:radial-gradient(90% 80% at 100% 0%,rgba(200,242,106,.20),transparent 60%),linear-gradient(150deg,#0e7a3e,#0a4f27 55%,#06331a);overflow:hidden;padding:24px 22px}
+.saldo .grande{display:block;margin:12px 0 4px;font:800 clamp(2.6rem,11vw,5rem)/.95 var(--font-display);letter-spacing:-.035em}
+.saldo .grande small{font-size:.4em;letter-spacing:0;color:var(--menta-clara);margin-left:6px}
+.saldo .usd{color:var(--menta-clara);font-weight:700}
+.saldo .monograma{position:absolute;right:-14px;bottom:-40px;font:800 15rem/1 var(--font-display);color:rgba(255,255,255,.06);pointer-events:none;user-select:none}
+.esq{position:absolute;width:70px;height:46px;pointer-events:none;border:0 solid var(--lima)}
+.esq-a{top:12px;left:12px;border-top-width:4px;border-left-width:4px;border-top-left-radius:8px}
+.esq-b{bottom:12px;right:12px;border-bottom-width:4px;border-right-width:4px;border-bottom-right-radius:8px}
+.saldo .linea{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:var(--r-pill);background:rgba(4,32,15,.45);border:1px solid var(--line);font-size:.85rem}
+.chip b{font-weight:700}
+.acciones{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:var(--r-pill);border:0;cursor:pointer;font:700 1rem var(--font-body);text-decoration:none;
+  transition:transform var(--t-hover) var(--ease-pop),box-shadow var(--t-hover) var(--ease),background var(--t-hover)}
+.btn-cta{background:var(--cta);color:var(--cta-ink);box-shadow:0 12px 30px -10px rgba(200,242,106,.7)}
+.btn-cta:hover{background:#d6f78a;transform:translateY(-2px)}
+.btn-cta:active{transform:scale(.97)}
+.btn-vidrio{background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--ink)}
+.btn-vidrio:hover{background:rgba(255,255,255,.14)}
+.btn-vidrio:active{transform:scale(.97)}
+
+.mini .valor{display:block;margin-top:8px;font:800 clamp(1.5rem,5vw,2.1rem)/1 var(--font-display);letter-spacing:-.02em}
+.mini .sub{color:var(--muted);font-size:.85rem}
+.mini .barra{margin-top:14px;height:10px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden}
+.mini .barra span{display:block;height:100%;width:var(--w);border-radius:6px;background:linear-gradient(90deg,var(--menta),var(--lima))}
+.mini.inv .barra span{background:linear-gradient(90deg,#5fb88d,var(--menta-clara))}
+
+/* Navegación tipo píldora (celular) */
+.pildora{position:fixed;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:20;display:flex;gap:2px;padding:6px;border-radius:var(--r-pill);
+  background:rgba(4,32,15,.78);border:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 20px 40px -12px rgba(0,0,0,.8);width:min(420px,calc(100% - 24px))}
+.pildora button{flex:1;min-height:52px;border:0;border-radius:var(--r-pill);background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:var(--muted);font:600 .66rem var(--font-body);position:relative;transition:color var(--t-hover)}
+.pildora button.on{color:var(--bosque)}
+.pildora .burbuja{position:absolute;top:6px;bottom:6px;border-radius:var(--r-pill);background:var(--lima);z-index:-1;transition:left .5s var(--ease-pop),width .5s var(--ease-pop)}
+@media(min-width:960px){.pildora{display:none}}
+
+/* ===== Hoja de muestra ===== */
+.controles{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter) 10px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.controles small{color:var(--muted)}
+.hoja{max-width:var(--maxw);margin:0 auto;padding:30px var(--gutter) 140px;display:grid;gap:56px}
+.hoja h2{margin:0 0 6px;font:800 clamp(1.6rem,5vw,2.4rem)/1.05 var(--font-display);letter-spacing:-.02em}
+.hoja h2 + p{margin:0 0 20px;color:var(--muted);max-width:60ch}
+.paleta{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.muestra-color{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:var(--vidrio)}
+.muestra-color div{height:84px;background:var(--c)}
+.muestra-color p{margin:0;padding:10px 12px;font-size:.85rem}
+.muestra-color b{display:block}
+.letras{display:grid;gap:14px}
+.letras .t1{font:800 clamp(2.2rem,8vw,4rem)/1 var(--font-display);letter-spacing:-.03em;margin:0}
+.letras .t2{font:800 1.5rem/1.1 var(--font-display);margin:0}
+.letras .p{margin:0;color:var(--muted);max-width:56ch}
+.elementos{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:720px){.elementos{grid-template-columns:repeat(2,1fr)}}
+.elem{min-height:180px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.elem p{margin:0;color:var(--muted);font-size:.9rem}
+.demo-franjas{position:relative;height:90px}
+.demo-franjas i{position:absolute;left:-10%;width:120%;border-radius:3px;transform:rotate(var(--angulo))}
+.demo-marco{position:relative;height:100px;display:grid;place-items:center;font:800 1.6rem var(--font-display)}
+.demo-marco svg{position:absolute;inset:0;width:100%;height:100%}
+.demo-marco path{fill:none;stroke:var(--lima);stroke-width:3}
+.demo-mono{font:800 6rem/1 var(--font-display);color:rgba(255,255,255,.12)}
+/* Tabla con el estilo nuevo */
+.tabla{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:.92rem}
+.tabla th{text-align:left;color:var(--muted);font:700 .7rem var(--font-body);letter-spacing:.12em;text-transform:uppercase;padding:0 12px}
+.tabla td{padding:12px;background:rgba(255,255,255,.04)}
+.tabla td:first-child{border-radius:12px 0 0 12px}.tabla td:last-child{border-radius:0 12px 12px 0}
+.tabla .n{text-align:right;white-space:nowrap}
+.tabla tr.total td{background:rgba(200,242,106,.14);font-weight:700}
+.tabla-caja{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.aviso{font-size:.8rem;color:var(--muted);text-align:center}
+
+/* Entrada (login) de muestra */
+.entrada{max-width:420px;padding:26px}
+.entrada label{display:block;font:700 .72rem var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px 6px}
+.entrada input{width:100%;min-height:50px;padding:0 18px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(4,32,15,.5);color:var(--ink);font:600 1rem var(--font-body);outline:0}
+.entrada input:focus{border-color:var(--lima);box-shadow:0 0 0 4px rgba(200,242,106,.18)}
+.entrada .btn{width:100%;margin-top:18px}
+
+/* Estados ocultos SOLO con JS */
+.js .pieza{visibility:hidden}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .js .pieza{visibility:visible}
+}
+</style>
+</head>
+<body>
+<div class="cielo" aria-hidden="true"></div>
+
+<!-- ===== INICIO PORTADA ===== -->
+<section class="portada" data-portada>
+  <div class="franjas" aria-hidden="true"><i data-franja></i><i data-franja></i><i data-franja></i><i data-franja></i></div>
+
+  <nav class="riel pieza" aria-label="Secciones del informe" data-pieza>
+    <span class="sello" role="img" aria-label="Logo Filadelfia I"></span>
+    <button class="on" aria-label="Informe resumido"><svg class="ico" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></button>
+    <button aria-label="Informe detallado"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+    <button aria-label="Recopilación de diezmos"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18M7 8c0-2 2-3 5-3s5 1 5 3-2 3-5 3-5 1-5 3 2 3 5 3 5-1 5-3"/></svg></button>
+    <button aria-label="Entradas semanales"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></button>
+    <button aria-label="Gráficas"><svg class="ico" viewBox="0 0 24 24"><path d="M5 20V11M12 20V5M19 20v-7"/></svg></button>
+  </nav>
+
+  <div class="zona">
+    <header class="top pieza" data-pieza>
+      <span class="sello" role="img" aria-label="Logo Filadelfia I"></span>
+      <div><h1>Tesorería Filadelfia I</h1><p>Informe del mes · IELPVS</p></div>
+      <div class="mes"><button aria-label="Mes anterior">‹</button><b>Septiembre</b><button aria-label="Mes siguiente">›</button></div>
+    </header>
+
+    <div class="bento">
+      <article class="card saldo pieza" data-pieza data-saldo>
+        <i class="esq esq-a" data-marco aria-hidden="true"></i><i class="esq esq-b" data-marco aria-hidden="true"></i>
+        <span class="monograma" aria-hidden="true">F</span>
+        <span class="eti">Saldo final · septiembre</span>
+        <span class="grande num"><span data-cuenta="3970">3.970,00</span><small>Bs</small></span>
+        <span class="usd num">$ 0,00</span>
+        <div class="linea">
+          <span class="chip">Saldo de agosto <b class="num">14.100,00 Bs</b></span>
+        </div>
+        <div class="acciones">
+          <button class="btn btn-cta" type="button">Ver informe detallado</button>
+          <button class="btn btn-vidrio" type="button">🎬 Presentación</button>
+        </div>
+      </article>
+
+      <article class="card mini pieza" data-pieza>
+        <span class="eti">Entradas del mes</span>
+        <span class="valor num">713.865,87 Bs</span>
+        <span class="sub num">Diezmo + ofrenda + fondo · $ 114,00</span>
+        <div class="barra"><span style="--w:100%" data-barra></span></div>
+      </article>
+
+      <article class="card mini inv pieza" data-pieza>
+        <span class="eti">Inversiones del mes</span>
+        <span class="valor num">709.895,87 Bs</span>
+        <span class="sub num">Total invertido · $ 114,00</span>
+        <div class="barra"><span style="--w:99.4%" data-barra></span></div>
+      </article>
+      <article class="card tabla-caja ancho pieza" data-pieza>
+        <span class="eti">Resumen del mes</span>
+        <table class="tabla">
+          <thead><tr><th>Resumen</th><th class="n">Bs</th><th class="n">$</th></tr></thead>
+          <tbody>
+            <tr><td>Saldo mes agosto</td><td class="n num">14.100,00</td><td class="n num">0,00</td></tr>
+            <tr><td>Entradas del mes</td><td class="n num">713.865,87</td><td class="n num">114,00</td></tr>
+            <tr><td>Inversiones del mes</td><td class="n num">709.895,87</td><td class="n num">114,00</td></tr>
+            <tr class="total"><td>Saldo final septiembre</td><td class="n num">3.970,00</td><td class="n num">0,00</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </div>
+  </div>
+</section>
+
+<nav class="pildora" aria-label="Secciones del informe" data-pildora>
+  <span class="burbuja" data-burbuja></span>
+  <button class="on"><svg class="ico" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Resumen</button>
+  <button><svg class="ico" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Detalle</button>
+  <button><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18M7 8c0-2 2-3 5-3s5 1 5 3-2 3-5 3-5 1-5 3 2 3 5 3 5-1 5-3"/></svg>Diezmos</button>
+  <button><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Semanas</button>
+  <button><svg class="ico" viewBox="0 0 24 24"><path d="M5 20V11M12 20V5M19 20v-7"/></svg>Gráficas</button>
+</nav>
+<!-- ===== FIN PORTADA ===== -->
+
+<p class="controles">
+  <button type="button" class="btn btn-vidrio" data-ver-de-nuevo>↺ Ver de nuevo</button>
+  <small data-aviso-rm hidden>Tienes activado "Reducir movimiento": ves una versión sin desplazamientos.</small>
+  <small>Hoja de muestra · no se publica</small>
+</p>
+
+<main class="hoja">
+  <!-- ===== INICIO PALETA ===== -->
+  <section>
+    <h2>Tus colores</h2>
+    <p>Todos salen de tu logo. El fondo es tu verde bosque y la lima es el color que guía la vista.</p>
+    <div class="paleta">
+      <div class="muestra-color"><div style="--c:#04200f;border-bottom:1px solid var(--line)"></div><p><b>Bosque #04200F</b>El fondo de todo</p></div>
+      <div class="muestra-color"><div style="--c:#073d1e"></div><p><b>Bosque claro #073D1E</b>Tu verde actual, en el cielo</p></div>
+      <div class="muestra-color"><div style="--c:#0e7a3e"></div><p><b>Verde hoja #0E7A3E</b>La tarjeta del saldo</p></div>
+      <div class="muestra-color"><div style="--c:#3fd69b"></div><p><b>Menta #3FD69B</b>Barras y detalles</p></div>
+      <div class="muestra-color"><div style="--c:#8ff0c6"></div><p><b>Menta clara #8FF0C6</b>Cifras en dólares</p></div>
+      <div class="muestra-color"><div style="--c:#c8f26a"></div><p><b>Lima #C8F26A</b>Botón principal y marcos</p></div>
+    </div>
+  </section>
+  <!-- ===== FIN PALETA ===== -->
+
+  <!-- ===== INICIO LETRAS ===== -->
+  <section>
+    <h2>Tus letras</h2>
+    <p>Las mismas que ya usas, pero con más fuerza en los números grandes.</p>
+    <div class="letras card">
+      <p class="t1 num">3.970,00 Bs</p>
+      <p class="t2">Recopilación de diezmos · Septiembre</p>
+      <p class="p">Mayordomía con orden y transparencia. Los números se alinean en columnas para que se lean de un vistazo, en el celular y en la pantalla grande.</p>
+    </div>
+  </section>
+  <!-- ===== FIN LETRAS ===== -->
+
+  <!-- ===== INICIO ELEMENTOS ===== -->
+  <section>
+    <h2>Lo que hace única tu web</h2>
+    <p>Cuatro piezas sacadas directamente de tu logo.</p>
+    <div class="elementos">
+      <div class="card elem">
+        <div class="demo-franjas" aria-hidden="true">
+          <i style="top:20px;height:9px;background:var(--lima)"></i><i style="top:38px;height:3px;background:var(--menta-clara)"></i><i style="top:58px;height:16px;background:var(--menta);opacity:.35"></i>
+        </div>
+        <p><b>Las franjas diagonales</b> de tu logo cruzan la pantalla al abrir y quedan de fondo.</p>
+      </div>
+      <div class="card elem">
+        <div class="demo-marco"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M2 40 V2 H45" vector-effect="non-scaling-stroke"/><path d="M98 60 V98 H55" vector-effect="non-scaling-stroke"/></svg><span class="num">Saldo</span></div>
+        <p><b>Las esquinas del marco</b> de tu logo encierran la cifra más importante del mes.</p>
+      </div>
+      <div class="card elem">
+        <div class="demo-mono" aria-hidden="true">F</div>
+        <p><b>La gran F</b> de Filadelfia, como marca de agua detrás del saldo.</p>
+      </div>
+      <div class="card elem">
+        <div style="display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(4,32,15,.6);border:1px solid var(--line);width:max-content">
+          <span style="padding:8px 16px;border-radius:999px;background:var(--lima);color:var(--bosque);font-weight:700;font-size:.85rem">Resumen</span>
+          <span style="padding:8px 12px;color:var(--muted);font-size:.85rem">Detalle</span><span style="padding:8px 12px;color:var(--muted);font-size:.85rem">Diezmos</span>
+        </div>
+        <p><b>La píldora de navegación:</b> en el celular las pestañas bajan a una barra fija con una burbuja lima que salta a la sección elegida.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FIN ELEMENTOS ===== -->
+
+  <!-- ===== INICIO TABLA Y ENTRADA ===== -->
+  <section>
+    <h2>Tablas y entrada</h2>
+    <p>Las tablas dejan de ser una cuadrícula con bordes: cada renglón es una franja suave y el total resalta en lima (la ves arriba). Así se verá la pantalla de entrada:</p>
+    <div class="elementos">
+      <form class="card entrada" onsubmit="return false">
+        <span class="eti">Informe de tesorería</span>
+        <label for="u">Usuario</label><input id="u" placeholder="Tu usuario" autocomplete="off">
+        <label for="c">Clave</label><input id="c" type="password" placeholder="••••••••" autocomplete="off">
+        <button class="btn btn-cta" type="button">Entrar</button>
+      </form>
+    </div>
+    <p class="aviso">Cifras tomadas de tu informe de septiembre (archivo informe_10.html).</p>
+  </section>
+  <!-- ===== FIN TABLA Y ENTRADA ===== -->
+</main>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script defer>
+addEventListener('DOMContentLoaded',()=>{
+const d=document,html=d.documentElement,$=(s,c=d)=>c.querySelector(s),$$=(s,c=d)=>[...c.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hasGSAP=typeof window.gsap!=='undefined'&&typeof window.ScrollTrigger!=='undefined';
+const safe=fn=>{try{fn()}catch(e){console.warn('[muestra]',e);html.classList.remove('js')}};
+const M={ease:'power3.out',easeIO:'power3.inOut',pop:'back.out(1.2)',dur:.9,stagger:.08,dist:28,lerp:.1};
+// Rescate: pase lo que pase, a los 4 s todo se ve
+setTimeout(()=>$$('.pieza').forEach(p=>p.style.visibility='visible'),4000);
+if(!hasGSAP){html.classList.remove('js');$('[data-ver-de-nuevo]').hidden=true}
+else gsap.registerPlugin(ScrollTrigger);
+
+/* Píldora: la burbuja salta al botón elegido (funciona con o sin animación) */
+safe(()=>{
+  const nav=$('[data-pildora]'),b=$('[data-burbuja]'),bs=$$('button',nav);
+  const mover=el=>{b.style.left=el.offsetLeft+'px';b.style.width=el.offsetWidth+'px'};
+  bs.forEach(x=>x.addEventListener('click',()=>{bs.forEach(y=>y.classList.remove('on'));x.classList.add('on');mover(x)}));
+  mover($('.on',nav));addEventListener('resize',()=>mover($('.on',nav)));
+  $$('.riel button').forEach((x,i,a)=>x.addEventListener('click',()=>{a.forEach(y=>y.classList.remove('on'));x.classList.add('on')}));
+});
+
+if(hasGSAP&&!RM&&window.Lenis)safe(()=>{
+  const lenis=new Lenis({lerp:M.lerp});lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+});
+
+/* La firma: las franjas del logo barren la pantalla, el marco se cierra sobre el saldo y la cifra cuenta */
+function firmaPortada(){
+  const franjas=$$('[data-franja]'),piezas=$$('[data-pieza]'),marcos=$$('[data-marco]'),barras=$$('[data-barra]');
+  const cifra=$('[data-cuenta]'),fin=+cifra.dataset.cuenta,fmt=n=>n.toLocaleString('es-VE',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const o={v:0};
+  const tl=gsap.timeline({defaults:{ease:M.ease}});
+  tl.set(piezas,{visibility:'visible'})
+    .fromTo(franjas,{xPercent:-110},{xPercent:0,duration:1,ease:M.easeIO,stagger:.07},0)
+    .fromTo(piezas,{autoAlpha:0,y:M.dist},{autoAlpha:1,y:0,duration:M.dur,stagger:M.stagger},.35)
+    .fromTo('[data-saldo]',{scale:.96},{scale:1,duration:M.dur,ease:M.pop},.45)
+    .fromTo(marcos,{clipPath:'inset(0 100% 100% 0)'},{clipPath:'inset(0 0% 0% 0)',duration:.8,ease:M.easeIO,stagger:.15},.9)
+    .fromTo(o,{v:0},{v:fin,duration:1.2,ease:'power2.out',onUpdate:()=>cifra.textContent=fmt(o.v)},.9)
+    .fromTo(barras,{scaleX:0,transformOrigin:'0 50%'},{scaleX:1,duration:1,stagger:.12},1.1);
+  return tl;
+}
+
+safe(()=>{
+  const repetir=$('[data-ver-de-nuevo]'),aviso=$('[data-aviso-rm]');
+  if(!hasGSAP)return;
+  if(RM){$$('.pieza').forEach(p=>p.style.visibility='visible');aviso.hidden=false;
+    repetir.addEventListener('click',()=>gsap.fromTo('[data-pieza]',{autoAlpha:0},{autoAlpha:1,duration:.5,stagger:.12,ease:'none'}));return}
+  let tl=null;
+  Promise.race([d.fonts?d.fonts.ready:Promise.resolve(),new Promise(r=>setTimeout(r,1200))]).then(()=>{tl=firmaPortada()});
+  d.addEventListener('pointerdown',()=>{if(tl&&tl.progress()<1)tl.progress(1)},{once:true});
+  repetir.addEventListener('click',e=>{e.stopPropagation();if(tl)tl.restart()});
+});
+});
+</script>
+</body>
+</html>

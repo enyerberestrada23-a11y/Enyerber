@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Tesorería Filadelfia</title><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-192.png"><meta name="theme-color" content="#073d1e"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Tesorería"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+html,body{margin:0;height:100%;background:#073d1e;overflow:hidden}
+#f{border:0;width:100%;height:calc(100% - 84px);display:block;transition:height .35s ease}
+/* Modo presentación: el informe ocupa toda la pantalla y se oculta la franja y la marca de agua */
+body.fs{background:#000}
+body.fs #f{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;z-index:2147483647}
+body.fs>*:not(#f):not(script){display:none!important}
+</style></head><body><iframe id="f" allow="fullscreen; screen-wake-lock" allowfullscreen></iframe><script>
+var URL_APP="https://script.google.com/macros/s/AKfycbzAUpaliiXH2Rhpy6JHCEBiUgSTyrTH4YSss2y1XJtIj_bSs6hZLwnzm7-NRjCNJLfk/exec";
+var F=document.getElementById("f");F.src=URL_APP;
+addEventListener("message",function(e){var d=e.data;if(!d||d.fil!=="fs")return;
+ if(d.on){document.body.classList.add("fs");try{var r=document.documentElement;(r.requestFullscreen||r.webkitRequestFullscreen).call(r).catch(function(){})}catch(x){}}
+ else{document.body.classList.remove("fs");try{if(document.fullscreenElement||document.webkitFullscreenElement)(document.exitFullscreen||document.webkitExitFullscreen).call(document)}catch(x){}}});
+</script></body></html>
