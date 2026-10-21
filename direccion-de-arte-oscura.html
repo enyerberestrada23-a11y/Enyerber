@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enyerber · Dirección de arte</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+<style>
+:root{
+  --negro:#07080A; --carbon:#111316; --vidrio:rgba(255,255,255,.045); --borde:rgba(255,255,255,.10);
+  --blanco:#F4F6F3; --gris:#9BA19C; --verde:#3DF56B; --verde-osc:#1C8A3A; --cta:#3DF56B; --cta-txt:#07080A;
+  --f-dis:'Archivo',system-ui,sans-serif; --f-txt:'Inter',system-ui,sans-serif; --f-mono:'JetBrains Mono',ui-monospace,monospace;
+  --r-s:12px; --r-m:22px; --r-l:32px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--negro)}
+body{background:var(--negro);color:var(--blanco);font-family:var(--f-txt);line-height:1.55;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.aviso{font:500 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gris);text-align:center;padding:10px 0;border-bottom:1px solid var(--borde)}
+
+/* ---------- PORTADA ---------- */
+.portada{position:relative;min-height:100svh;display:grid;align-content:center;padding:120px 0 48px;overflow:hidden;isolation:isolate}
+.portada__luz{position:absolute;inset:auto -20% -40% -20%;height:80%;background:radial-gradient(50% 50% at 50% 50%,rgba(61,245,107,.22),transparent 70%);z-index:-1;filter:blur(20px)}
+.portada__reja{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--borde) 1px,transparent 1px),linear-gradient(90deg,var(--borde) 1px,transparent 1px);background-size:64px 64px;mask:radial-gradient(70% 60% at 50% 40%,#000,transparent);opacity:.35}
+.nav{position:absolute;top:16px;left:50%;translate:-50% 0;width:min(1200px,100% - 32px);display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 16px;border:1px solid var(--borde);border-radius:999px;background:var(--vidrio);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.nav__marca{display:flex;align-items:center;gap:10px;font:800 15px/1 var(--f-dis);font-stretch:118%;letter-spacing:.06em}
+.nav__marca svg{width:34px;height:34px}.nav__txt{display:grid;gap:3px}.nav__txt small{font:500 10px/1 var(--f-mono);letter-spacing:.14em;color:var(--verde);text-transform:uppercase}
+.nav__links{display:none;gap:28px;font-size:14px;color:var(--gris)}
+@media(min-width:900px){.nav__links{display:flex}}
+.grid{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.grid{grid-template-columns:1.1fr .9fr;gap:56px}}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:500 12px/1 var(--f-mono);color:var(--verde);letter-spacing:.06em;padding:8px 12px;border:1px solid rgba(61,245,107,.3);border-radius:999px;background:rgba(61,245,107,.06)}
+.kicker i{width:7px;height:7px;border-radius:50%;background:var(--verde);box-shadow:0 0 10px var(--verde)}
+.titular{font-family:var(--f-dis);font-weight:800;font-stretch:112%;font-size:clamp(2.6rem,9.5vw,5.6rem);line-height:.98;letter-spacing:-.035em;margin:20px 0 18px}
+.titular .ln{display:block;padding-bottom:.12em;margin-bottom:-.12em}
+.titular em{font-style:normal;color:var(--verde)}
+.bajada{color:var(--gris);font-size:clamp(1rem,2.6vw,1.15rem);max-width:34ch}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font:600 15px/1 var(--f-txt);text-decoration:none;transition:transform .5s var(--ease),background .3s,box-shadow .5s var(--ease);cursor:pointer;border:0}
+.btn--cta{background:var(--cta);color:var(--cta-txt);box-shadow:0 0 0 0 rgba(61,245,107,0)}
+.btn--cta:hover{box-shadow:0 10px 40px -8px rgba(61,245,107,.6);transform:translateY(-2px)}
+.btn--cta:active{transform:scale(.97)}
+.btn--cta svg{transition:transform .5s var(--ease)}
+.btn--cta:hover svg{transform:translateX(4px)}
+.btn--vidrio{background:var(--vidrio);color:var(--blanco);border:1px solid var(--borde);backdrop-filter:blur(12px)}
+.btn--vidrio:hover{background:rgba(255,255,255,.09)}
+
+/* visor: la composición protagonista */
+.visor{position:relative;aspect-ratio:4/5;max-width:440px;width:100%;margin-inline:auto;border-radius:var(--r-l);border:1px solid var(--borde);background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.01));backdrop-filter:blur(20px)}
+.visor__foto{position:absolute;inset:14px 14px 92px;border-radius:var(--r-m);background:radial-gradient(80% 70% at 50% 30%,#1b2a1f,#0b0d0f);display:grid;place-items:center;overflow:hidden}
+.visor__foto .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}.visor__foto .sello{position:absolute;left:28px;bottom:26px;width:30px;opacity:.9}
+.visor__foto small{position:absolute;bottom:10px;left:0;right:0;text-align:center;font:500 10px/1.2 var(--f-mono);color:#EDE15A;letter-spacing:.04em}
+.esquina{position:absolute;width:18px;height:18px;border-color:var(--verde);border-style:solid;border-width:0}
+.esquina.a{top:24px;left:24px;border-top-width:2px;border-left-width:2px}
+.esquina.b{top:24px;right:24px;border-top-width:2px;border-right-width:2px}
+.esquina.c{bottom:102px;left:24px;border-bottom-width:2px;border-left-width:2px}
+.esquina.d{bottom:102px;right:24px;border-bottom-width:2px;border-right-width:2px}
+.rec{position:absolute;top:30px;left:50%;translate:-50% 0;font:500 11px/1 var(--f-mono);display:flex;gap:6px;align-items:center;color:var(--blanco)}
+.rec i{width:7px;height:7px;border-radius:50%;background:var(--verde)}
+.linea{position:absolute;left:14px;right:14px;bottom:14px;height:64px;border-radius:var(--r-s);background:rgba(0,0,0,.45);border:1px solid var(--borde);padding:10px 12px;overflow:hidden}
+.linea__tc{font:500 11px/1 var(--f-mono);color:var(--gris);display:flex;justify-content:space-between}
+.linea__tc b{color:var(--verde);font-weight:500}
+.pistas{position:relative;margin-top:10px;height:22px}
+.clip{position:absolute;top:0;height:9px;border-radius:3px;background:var(--verde)}
+.clip.t2{top:13px;background:rgba(244,246,243,.55)}
+.cabezal{position:absolute;top:-6px;bottom:-4px;left:0;width:2px;background:var(--blanco);box-shadow:0 0 8px #fff}
+.chip{position:absolute;font:500 12px/1.2 var(--f-txt);padding:10px 14px;border-radius:14px;border:1px solid var(--borde);background:rgba(17,19,22,.7);backdrop-filter:blur(14px)}
+.chip b{display:block;font:500 11px/1 var(--f-mono);color:var(--verde);margin-bottom:4px}
+.chip.uno{top:18%;right:-6px}
+.chip.dos{top:52%;left:-6px}
+@media(min-width:900px){.chip.uno{right:-28px}.chip.dos{left:-36px}}
+
+.controles{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:8px 16px 40px;font-size:13px;color:var(--gris);text-align:center}
+
+/* ---------- HOJA ---------- */
+.bloque{padding:56px 0;border-top:1px solid var(--borde)}
+.et{font:500 12px/1 var(--f-mono);color:var(--verde);letter-spacing:.08em;text-transform:uppercase}
+.h2{font:800 clamp(1.8rem,6vw,2.8rem)/1.05 var(--f-dis);font-stretch:112%;letter-spacing:-.03em;margin:12px 0 24px}
+.paleta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.color{border-radius:var(--r-m);border:1px solid var(--borde);overflow:hidden;background:var(--carbon)}
+.color div{height:96px}
+.color p{padding:12px 14px;font-size:13px;color:var(--gris)}
+.color p b{display:block;color:var(--blanco);font-family:var(--f-mono);font-weight:500;margin-bottom:4px}
+.letras p{color:var(--gris);max-width:60ch}
+.muestra-tit{font:800 clamp(2rem,7vw,3.6rem)/1 var(--f-dis);font-stretch:112%;letter-spacing:-.035em;margin-bottom:12px}
+.muestra-mono{font:500 13px var(--f-mono);color:var(--verde);margin:14px 0}
+.piezas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.pieza{border:1px solid var(--borde);border-radius:var(--r-m);background:var(--vidrio);padding:20px}
+.pieza .lienzo{height:130px;display:grid;place-items:center;margin-bottom:14px;border-radius:var(--r-s);background:rgba(0,0,0,.35);position:relative;overflow:hidden}
+.pieza h3{font:700 17px/1.2 var(--f-dis);font-stretch:110%;margin-bottom:6px}
+.pieza p{font-size:14px;color:var(--gris)}
+.mono-dibujo{width:96px}
+.marcos{width:120px;height:80px;position:relative}
+.marcos .esquina{width:16px;height:16px}
+.marcos .a{top:0;left:0}.marcos .b{top:0;right:0}.marcos .c{bottom:0;left:0}.marcos .d{bottom:0;right:0}
+.marcos span{position:absolute;inset:0;display:grid;place-items:center;font:500 11px var(--f-mono);color:var(--gris)}
+.mini-linea{width:85%;position:relative;height:40px}
+.tarjeta{max-width:420px;border:1px solid var(--borde);border-radius:var(--r-l);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));padding:14px;transition:transform .6s var(--ease),border-color .4s}
+.tarjeta:hover{transform:translateY(-6px);border-color:rgba(61,245,107,.4)}
+.tarjeta__img{aspect-ratio:16/10;border-radius:var(--r-m);background:radial-gradient(70% 80% at 30% 20%,#173a22,#0b0d0f);display:grid;place-items:center;font:500 11px var(--f-mono);color:#EDE15A;position:relative}
+.tarjeta__play{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(244,246,243,.12);backdrop-filter:blur(10px);border:1px solid var(--borde);display:grid;place-items:center}
+.tarjeta__txt{display:flex;justify-content:space-between;align-items:end;padding:16px 6px 6px}
+.tarjeta__txt h3{font:700 18px var(--f-dis);font-stretch:110%}
+.tarjeta__txt p{font-size:13px;color:var(--gris)}
+.fila{display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+footer{padding:40px 0 60px;color:var(--gris);font-size:13px;text-align:center}
+
+/* estados ocultos solo con JS */
+.js [data-pieza]{visibility:hidden}
+@media (prefers-reduced-motion:reduce){.js [data-pieza]{visibility:visible}}
+</style>
+</head>
+<body>
+<p class="aviso">Hoja de muestra · no se publica</p>
+
+<!-- PORTADA: inicio -->
+<section class="portada" data-portada>
+  <div class="portada__luz" data-pieza="luz"></div>
+  <div class="portada__reja" data-pieza="reja"></div>
+  <nav class="nav" data-pieza="nav">
+    <span class="nav__marca">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#monograma"/></svg>
+      <span class="nav__txt">ENYERBER<small>Video Editor</small></span>
+    </span>
+    <span class="nav__links"><span>Trabajos</span><span>Proceso</span><span>Herramientas</span><span>Contacto</span></span>
+    <a class="btn btn--cta" style="min-height:44px;padding:0 18px;font-size:14px" href="#">Hablemos</a>
+  </nav>
+
+  <div class="wrap grid">
+    <div>
+      <span class="kicker" data-pieza="kicker"><i></i>Editor de video · Motion graphics</span>
+      <h1 class="titular" data-titular>
+        <span class="ln">Cada corte</span>
+        <span class="ln">tiene una</span>
+        <span class="ln"><em>intención.</em></span>
+      </h1>
+      <p class="bajada" data-pieza="bajada">Transformo tu material en piezas que retienen la atención hasta el último frame. Postproducción avanzada, ritmo y color con estándar de industria.</p>
+      <div class="acciones" data-pieza="acciones">
+        <a class="btn btn--cta" href="#">Hablemos de tu proyecto
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn--vidrio" href="#">Ver trabajos</a>
+      </div>
+    </div>
+
+    <div class="visor" data-visor>
+      <div class="visor__foto">
+        <img class="foto" src="img/enyerber.webp" alt="Enyerber Estrada, editor de video" width="760" height="950" data-mono-grande>
+        <svg class="sello" viewBox="0 0 64 64" aria-hidden="true"><use href="#monograma"/></svg>
+      </div>
+      <span class="esquina a" data-esq></span><span class="esquina b" data-esq></span>
+      <span class="esquina c" data-esq></span><span class="esquina d" data-esq></span>
+      <span class="rec" data-pieza="rec"><i></i>REC</span>
+      <div class="linea">
+        <div class="linea__tc"><span>SEQ_01</span><b data-tc>00:00:00:00</b></div>
+        <div class="pistas" data-pistas>
+          <span class="clip" style="left:0;width:22%"></span>
+          <span class="clip" style="left:24%;width:30%"></span>
+          <span class="clip" style="left:56%;width:16%"></span>
+          <span class="clip" style="left:74%;width:26%"></span>
+          <span class="clip t2" style="left:6%;width:40%"></span>
+          <span class="clip t2" style="left:50%;width:44%"></span>
+          <span class="cabezal" data-cabezal></span>
+        </div>
+      </div>
+      <div class="chip uno" data-pieza="chip"><b>RETENCIÓN</b>[CIFRA REAL]</div>
+      <div class="chip dos" data-pieza="chip"><b>ENTREGA</b>Respuesta en 24 h</div>
+    </div>
+  </div>
+</section>
+<!-- PORTADA: fin -->
+
+<p class="controles">
+  <button type="button" class="btn btn--vidrio" data-ver-de-nuevo>Ver de nuevo</button>
+  <span data-aviso-rm hidden>Tienes activado "Reducir movimiento": ves una versión sin desplazamientos.</span>
+</p>
+
+<!-- monograma: definición única -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="monograma" viewBox="0 0 64 64">
+    <!-- E sólida: barras con corte diagonal (avance) y la barra central termina en un "play" -->
+    <path d="M6 6H58L50 18H22V46H50L58 58H6Z" fill="#F4F6F3"/>
+    <path d="M26 26H36V38H26Z M40 22L55 32L40 42Z" fill="#3DF56B"/>
+  </symbol>
+</svg>
+
+<main class="wrap">
+  <section class="bloque">
+    <p class="et">01 · Tu monograma</p>
+    <h2 class="h2">Una E que siempre avanza.</h2>
+    <div class="fila">
+      <svg class="mono-dibujo" style="width:140px" viewBox="0 0 64 64" aria-label="Monograma E"><use href="#monograma"/></svg>
+      <p style="color:var(--gris);max-width:46ch">Una sola forma, sólida y sin adornos, como tú. Las barras de arriba y abajo terminan en un corte inclinado, que es el filo urbano y la sensación de ir hacia adelante. La barra del medio termina en un botón de play verde: tu oficio en el centro de tu nombre. Funciona en un solo color, en el avatar de tus redes y como marca de agua en tus videos.</p>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <p class="et">02 · Tus colores</p>
+    <h2 class="h2">Negro, verde, blanco. Nada más.</h2>
+    <div class="paleta">
+      <div class="color"><div style="background:#07080A;border-bottom:1px solid var(--borde)"></div><p><b>#07080A</b>Negro sala de edición. El fondo de todo.</p></div>
+      <div class="color"><div style="background:#111316"></div><p><b>#111316</b>Carbón. Paneles y tarjetas de vidrio.</p></div>
+      <div class="color"><div style="background:#3DF56B"></div><p><b>#3DF56B</b>Verde. Solo para lo importante: botón, acentos, el corte.</p></div>
+      <div class="color"><div style="background:#F4F6F3"></div><p><b>#F4F6F3</b>Blanco. Títulos y textos.</p></div>
+    </div>
+  </section>
+
+  <section class="bloque letras">
+    <p class="et">03 · Tus letras</p>
+    <p class="muestra-tit">Montaje y narrativa</p>
+    <p>La edición no es solo unir clips; es controlar la atención del espectador. Ritmo dinámico y milimétrico que mantiene a la audiencia inmersa hasta el último frame.</p>
+    <p class="muestra-mono">TC 00:01:24:12 · SEQ_03 · 4K</p>
+    <p>Títulos con una letra ancha y firme. Textos limpios para leer fácil. Y una letra de código de tiempo para los detalles técnicos, como en tu programa de edición.</p>
+  </section>
+
+  <section class="bloque">
+    <p class="et">04 · Lo que hace única tu página</p>
+    <h2 class="h2">Piezas de tu oficio.</h2>
+    <div class="piezas">
+      <div class="pieza"><div class="lienzo"><div class="marcos"><span class="esquina a"></span><span class="esquina b"></span><span class="esquina c"></span><span class="esquina d"></span><span>[ ENCUADRE ]</span></div></div><h3>Marcos de cámara</h3><p>Las esquinas de tu monograma enmarcan videos y fotos en toda la web.</p></div>
+      <div class="pieza"><div class="lienzo"><div class="mini-linea pistas" data-demo-linea><span class="clip" style="left:0;width:30%"></span><span class="clip" style="left:34%;width:22%"></span><span class="clip" style="left:60%;width:40%"></span><span class="clip t2" style="left:10%;width:50%"></span><span class="cabezal"></span></div></div><h3>Línea de tiempo</h3><p>Separa secciones y marca tu proceso: el cabezal avanza mientras bajas.</p></div>
+      <div class="pieza"><div class="lienzo"><span style="font:500 22px var(--f-mono);color:var(--verde)" data-demo-tc>00:00:00:00</span></div><h3>Código de tiempo</h3><p>Los números de cada sección corren como en tu software.</p></div>
+      <div class="pieza"><div class="lienzo"><span class="kicker"><i></i>REC</span></div><h3>Punto verde</h3><p>Señal de "en vivo": marca lo que está disponible y activo.</p></div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <p class="et">05 · Botón y tarjeta</p>
+    <h2 class="h2">Pasa el mouse.</h2>
+    <div class="fila">
+      <a class="btn btn--cta" href="#">Hablemos de tu proyecto
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="btn btn--vidrio" href="#">Ver trabajos</a>
+    </div>
+    <div class="tarjeta" style="margin-top:28px">
+      <div class="tarjeta__img">[MINIATURA DE TU VIDEO]
+        <span class="tarjeta__play"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z" fill="#F4F6F3"/></svg></span></div>
+      <div class="tarjeta__txt"><div><h3>[Nombre del proyecto]</h3><p>Reel · Motion graphics</p></div><span class="et">00:45</span></div>
+    </div>
+  </section>
+</main>
+<footer>Enyerber Estrada · Dirección de arte · Hoja de muestra</footer>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script>
+addEventListener('DOMContentLoaded', () => {
+const d = document, html = d.documentElement;
+const $ = (s, c = d) => c.querySelector(s), $$ = (s, c = d) => [...c.querySelectorAll(s)];
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+const safe = (fn) => { try { fn(); } catch (e) { console.warn('[muestra]', e); } };
+if (!hasGSAP) { html.classList.remove('js'); const r = $('[data-ver-de-nuevo]'); if (r) r.hidden = true; return; }
+gsap.registerPlugin(ScrollTrigger); if (window.SplitText) gsap.registerPlugin(SplitText);
+const M = { ease: 'expo.out', cut: 'power4.inOut', dur: 1.1 };
+
+safe(() => {
+  if (RM || !window.Lenis) return;
+  const lenis = new Lenis({ lerp: 0.09 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((t) => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+});
+
+// código de tiempo: segundos -> HH:MM:SS:FF a 24 fps
+const tc = (s) => { const f = Math.floor(s * 24), p = (n) => String(n).padStart(2, '0');
+  return `${p(Math.floor(f / 86400))}:${p(Math.floor(f / 1440) % 60)}:${p(Math.floor(f / 24) % 60)}:${p(f % 24)}`; };
+
+let split = null;
+function firmaPortada() {
+  const P = '[data-portada]';
+  if (!split && window.SplitText) split = SplitText.create(`${P} [data-titular] .ln`, { type: 'words', mask: 'words' });
+  const words = split ? split.words : $$(`${P} [data-titular] .ln`);
+  const clips = $$(`${P} [data-pistas] .clip`), tcEl = $(`${P} [data-tc]`), cab = $(`${P} [data-cabezal]`);
+  const reloj = { t: 0 };
+  const tl = gsap.timeline({ defaults: { ease: M.ease } });
+  tl.set(`${P} [data-pieza]`, { autoAlpha: 0 })
+    .set(`${P} [data-visor]`, { clipPath: 'inset(50% 0% 50% 0% round 32px)' })
+    .set(clips, { scaleX: 0, transformOrigin: 'left center' })
+    .set(cab, { left: '0%' })
+    .set(`${P} [data-esq]`, { scale: 1.6, autoAlpha: 0 })
+    .set(`${P} [data-mono-grande]`, { autoAlpha: 0, scale: 1.15 })
+    .set(words, { yPercent: 110 })
+    // 1. se abre el visor como un obturador
+    .to(`${P} [data-visor]`, { clipPath: 'inset(0% 0% 0% 0% round 32px)', duration: 1, ease: M.cut, clearProps: "clipPath" })
+    .to(`${P} [data-esq]`, { scale: 1, autoAlpha: 1, duration: .6, stagger: .05 }, '-=.4')
+    .to(`${P} [data-pieza="rec"]`, { autoAlpha: 1, duration: .2, repeat: 4, yoyo: true, ease: 'none' }, '<')
+    // 2. los clips caen en la línea de tiempo y el cabezal corre con el código de tiempo
+    .to(clips, { scaleX: 1, duration: .5, stagger: .07, ease: 'power3.out' }, '-=.3')
+    .to(cab, { left: '100%', duration: 1.4, ease: 'power2.inOut' }, '<')
+    .to(reloj, { t: 4.5, duration: 1.4, ease: 'power2.inOut', onUpdate: () => { tcEl.textContent = tc(reloj.t); } }, '<')
+    // 3. el monograma se forma en el visor
+    .to(`${P} [data-mono-grande]`, { autoAlpha: 1, scale: 1, duration: .9 }, '-=1')
+    // 4. el titular entra corte a corte
+    .to(words, { yPercent: 0, duration: 1, stagger: .06 }, '-=.9')
+    .to(`${P} [data-pieza="kicker"], ${P} [data-pieza="bajada"], ${P} [data-pieza="acciones"]`, { autoAlpha: 1, y: 0, startAt: { y: 16 }, duration: .8, stagger: .08 }, '-=.7')
+    .to(`${P} [data-pieza="chip"]`, { autoAlpha: 1, y: 0, startAt: { y: 20 }, duration: .8, stagger: .12 }, '-=.6')
+    .to(`${P} [data-pieza="nav"], ${P} [data-pieza="luz"], ${P} [data-pieza="reja"]`, { autoAlpha: 1, duration: 1.2 }, '-=.9');
+  // después: los chips flotan suavemente
+  tl.add(() => gsap.to(`${P} [data-pieza="chip"]`, { y: -8, duration: 2.4, ease: 'sine.inOut', yoyo: true, repeat: -1, stagger: .6, overwrite: 'auto' }));
+  return tl;
+}
+
+safe(() => {
+  const repetir = $('[data-ver-de-nuevo]'), aviso = $('[data-aviso-rm]');
+  if (RM) {
+    gsap.set('[data-pieza]', { autoAlpha: 1 });
+    if (aviso) aviso.hidden = false;
+    repetir.addEventListener('click', () => gsap.fromTo('[data-portada] [data-pieza]', { autoAlpha: 0 }, { autoAlpha: 1, duration: .5, stagger: .1, ease: 'none' }));
+    return;
+  }
+  let tl = null;
+  const fallback = setTimeout(() => gsap.set('[data-pieza]', { autoAlpha: 1 }), 4000);
+  Promise.race([d.fonts ? d.fonts.ready : Promise.resolve(), new Promise((r) => setTimeout(r, 1200))])
+    .then(() => { tl = firmaPortada(); clearTimeout(fallback); });
+  d.addEventListener('pointerdown', () => { if (tl && tl.progress() < 1) tl.progress(1); }, { once: true });
+  repetir.addEventListener('click', () => { if (tl) tl.restart(); });
+});
+
+// demos de las piezas: corren al entrar en pantalla
+safe(() => {
+  if (RM) return;
+  const l = $('[data-demo-linea]');
+  gsap.fromTo($$('.clip', l), { scaleX: 0, transformOrigin: 'left' }, { scaleX: 1, stagger: .1, duration: .6, ease: 'power3.out', scrollTrigger: { trigger: l, start: 'top 85%' } });
+  gsap.fromTo($('.cabezal', l), { left: '0%' }, { left: '100%', duration: 3, ease: 'none', repeat: -1, scrollTrigger: { trigger: l, start: 'top 85%' } });
+  const t = $('[data-demo-tc]'), o = { t: 0 };
+  gsap.to(o, { t: 84.5, duration: 2.2, ease: 'power2.out', onUpdate: () => { t.textContent = tc(o.t); }, scrollTrigger: { trigger: t, start: 'top 85%' } });
+  $$('.bloque').forEach((b) => gsap.from($$('.et, .h2, .paleta > *, .piezas > *, .fila, .tarjeta, .muestra-tit, .letras p', b), { autoAlpha: 0, y: 30, duration: 1, stagger: .06, ease: M.ease, scrollTrigger: { trigger: b, start: 'top 80%' } }));
+});
+});
+</script>
+</body>
+</html>
