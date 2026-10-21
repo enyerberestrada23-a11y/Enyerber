@@ -30,7 +30,7 @@ img,svg{display:block;max-width:100%}
 .portada__reja{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--borde) 1px,transparent 1px),linear-gradient(90deg,var(--borde) 1px,transparent 1px);background-size:64px 64px;mask:radial-gradient(70% 60% at 50% 40%,#000,transparent);opacity:.35}
 .nav{position:absolute;top:16px;left:50%;translate:-50% 0;width:min(1200px,100% - 32px);display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 16px;border:1px solid var(--borde);border-radius:999px;background:var(--vidrio);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 .nav__marca{display:flex;align-items:center;gap:10px;font:800 15px/1 var(--f-dis);font-stretch:118%;letter-spacing:.06em}
-.nav__marca svg{width:30px;height:30px}
+.nav__marca svg{width:34px;height:34px}.nav__txt{display:grid;gap:3px}.nav__txt small{font:500 10px/1 var(--f-mono);letter-spacing:.14em;color:var(--verde);text-transform:uppercase}
 .nav__links{display:none;gap:28px;font-size:14px;color:var(--gris)}
 @media(min-width:900px){.nav__links{display:flex}}
 .grid{display:grid;gap:40px;align-items:center}
@@ -126,7 +126,7 @@ footer{padding:40px 0 60px;color:var(--gris);font-size:13px;text-align:center}
   <nav class="nav" data-pieza="nav">
     <span class="nav__marca">
       <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#monograma"/></svg>
-      ENYERBER
+      <span class="nav__txt">ENYERBER<small>Video Editor</small></span>
     </span>
     <span class="nav__links"><span>Trabajos</span><span>Proceso</span><span>Herramientas</span><span>Contacto</span></span>
     <a class="btn btn--cta" style="min-height:44px;padding:0 18px;font-size:14px" href="#">Hablemos</a>
@@ -183,22 +183,19 @@ footer{padding:40px 0 60px;color:var(--gris);font-size:13px;text-align:center}
 <!-- monograma: definición única -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="monograma" viewBox="0 0 64 64">
-    <!-- E de cortes: tres pistas de línea de tiempo + espina inclinada, encerradas en un marco de cámara -->
-    <path d="M4 4h12M4 4v12M60 4H48M60 4v12M4 60h12M4 60V48M60 60H48M60 60V48" stroke="#3DF56B" stroke-width="3" fill="none" stroke-linecap="square"/>
-    <path d="M20 17h26l-3 7H20z" fill="#F4F6F3"/>
-    <path d="M20 29h18l-3 7H20z" fill="#3DF56B"/>
-    <path d="M20 41h26l-3 7H20z" fill="#F4F6F3"/>
-    <path d="M20 17h6v31h-6z" fill="#F4F6F3"/>
+    <!-- E sólida: barras con corte diagonal (avance) y la barra central termina en un "play" -->
+    <path d="M6 6H58L50 18H22V46H50L58 58H6Z" fill="#F4F6F3"/>
+    <path d="M26 26H36V38H26Z M40 22L55 32L40 42Z" fill="#3DF56B"/>
   </symbol>
 </svg>
 
 <main class="wrap">
   <section class="bloque">
     <p class="et">01 · Tu monograma</p>
-    <h2 class="h2">Una E hecha de cortes.</h2>
+    <h2 class="h2">Una E que siempre avanza.</h2>
     <div class="fila">
       <svg class="mono-dibujo" style="width:140px" viewBox="0 0 64 64" aria-label="Monograma E"><use href="#monograma"/></svg>
-      <p style="color:var(--gris);max-width:46ch">Las tres barras son pistas de una línea de tiempo; la del medio, en verde, es el corte que importa. El marco de cámara la encierra: precisión y foco. Sin adornos, como tú: serio, callado, exacto. Las puntas inclinadas le dan el filo urbano.</p>
+      <p style="color:var(--gris);max-width:46ch">Una sola forma, sólida y sin adornos, como tú. Las barras de arriba y abajo terminan en un corte inclinado, que es el filo urbano y la sensación de ir hacia adelante. La barra del medio termina en un botón de play verde: tu oficio en el centro de tu nombre. Funciona en un solo color, en el avatar de tus redes y como marca de agua en tus videos.</p>
     </div>
   </section>
 
