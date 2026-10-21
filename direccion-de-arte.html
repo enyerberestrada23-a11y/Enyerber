@@ -54,7 +54,7 @@ img,svg{display:block;max-width:100%}
 /* visor: la composición protagonista */
 .visor{position:relative;aspect-ratio:4/5;max-width:440px;width:100%;margin-inline:auto;border-radius:var(--r-l);border:1px solid var(--borde);background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.01));backdrop-filter:blur(20px)}
 .visor__foto{position:absolute;inset:14px 14px 92px;border-radius:var(--r-m);background:radial-gradient(80% 70% at 50% 30%,#1b2a1f,#0b0d0f);display:grid;place-items:center;overflow:hidden}
-.visor__foto .mono-grande{width:56%;opacity:.95}
+.visor__foto .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}.visor__foto .sello{position:absolute;left:28px;bottom:26px;width:30px;opacity:.9}
 .visor__foto small{position:absolute;bottom:10px;left:0;right:0;text-align:center;font:500 10px/1.2 var(--f-mono);color:#EDE15A;letter-spacing:.04em}
 .esquina{position:absolute;width:18px;height:18px;border-color:var(--verde);border-style:solid;border-width:0}
 .esquina.a{top:24px;left:24px;border-top-width:2px;border-left-width:2px}
@@ -150,8 +150,8 @@ footer{padding:40px 0 60px;color:var(--gris);font-size:13px;text-align:center}
 
     <div class="visor" data-visor>
       <div class="visor__foto">
-        <svg class="mono-grande" viewBox="0 0 64 64" aria-hidden="true" data-mono-grande><use href="#monograma"/></svg>
-        <small>[AQUÍ VA TU FOTO EN ALTA]</small>
+        <img class="foto" src="img/enyerber.webp" alt="Enyerber Estrada, editor de video" width="760" height="950" data-mono-grande>
+        <svg class="sello" viewBox="0 0 64 64" aria-hidden="true"><use href="#monograma"/></svg>
       </div>
       <span class="esquina a" data-esq></span><span class="esquina b" data-esq></span>
       <span class="esquina c" data-esq></span><span class="esquina d" data-esq></span>
@@ -285,7 +285,7 @@ function firmaPortada() {
     .set(clips, { scaleX: 0, transformOrigin: 'left center' })
     .set(cab, { left: '0%' })
     .set(`${P} [data-esq]`, { scale: 1.6, autoAlpha: 0 })
-    .set(`${P} [data-mono-grande]`, { autoAlpha: 0, scale: .8 })
+    .set(`${P} [data-mono-grande]`, { autoAlpha: 0, scale: 1.15 })
     .set(words, { yPercent: 110 })
     // 1. se abre el visor como un obturador
     .to(`${P} [data-visor]`, { clipPath: 'inset(0% 0% 0% 0% round 32px)', duration: 1, ease: M.cut, clearProps: "clipPath" })
