@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enyerber · Dirección de arte</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,500&display=swap" rel="stylesheet">
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+<style>
+:root{
+  --fondo:#ECEFEC; --vidrio:rgba(255,255,255,.58); --vidrio-2:rgba(255,255,255,.78); --linea:rgba(255,255,255,.9); --linea-2:rgba(10,14,11,.08);
+  --negro:#07080A; --carbon:#101312; --texto:#3A413C; --suave:#5C645E;
+  --verde:#3DF56B; --verde-txt:#0B8A33;
+  --cta:#07080A; --cta-txt:#fff;
+  /* SF Compact si el equipo la tiene; si no, Inter Tight */
+  --f-sf:'SF Compact Display','SF Compact Text','SF Compact','Inter Tight',system-ui,sans-serif;
+  --f-urb:'Anton','Impact',sans-serif;
+  --r-m:22px; --r-l:32px;
+  --sombra:0 1px 0 rgba(255,255,255,.9) inset,0 24px 60px -30px rgba(10,30,15,.25);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--fondo)}
+body{background:var(--fondo);color:var(--texto);font-family:var(--f-sf);line-height:1.5;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.ambiente{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.ambiente i{position:absolute;border-radius:50%;filter:blur(90px)}
+.ambiente .g1{width:60vmax;height:60vmax;left:-25vmax;top:-25vmax;background:rgba(61,245,107,.22)}
+.ambiente .g2{width:40vmax;height:40vmax;right:-15vmax;bottom:-15vmax;background:rgba(61,245,107,.12)}
+.wrap{width:min(1240px,100% - 20px);margin-inline:auto}
+.panel{background:var(--vidrio);border:1px solid var(--linea);border-radius:var(--r-l);box-shadow:var(--sombra);backdrop-filter:blur(24px) saturate(150%);-webkit-backdrop-filter:blur(24px) saturate(150%)}
+.oscuro{background:var(--negro);color:#C9CFCA;border-radius:var(--r-l);position:relative;overflow:hidden}
+.aviso{font:500 11px/1 var(--f-sf);letter-spacing:.1em;text-transform:uppercase;color:var(--suave);text-align:center;padding:10px 0}
+.et{font:600 12px/1 var(--f-sf);letter-spacing:.16em;text-transform:uppercase;color:var(--verde-txt);display:inline-flex;gap:8px;align-items:center}
+.et::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--verde);box-shadow:0 0 10px var(--verde)}
+.oscuro .et{color:var(--verde)}
+.urb{font-family:var(--f-urb);font-weight:400;text-transform:uppercase;letter-spacing:-.01em;line-height:.86}
+.fina{font-family:var(--f-sf);font-weight:300;font-style:italic;letter-spacing:-.04em;text-transform:none}
+.ln{display:block;padding-bottom:.08em;margin-bottom:-.08em}
+.placeholder{background:#FFF59A;color:#4a4000;padding:0 4px;border-radius:4px;font:600 .8em var(--f-sf);font-style:normal;letter-spacing:0}
+
+/* NAV */
+.nav{position:sticky;top:10px;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 12px;border-radius:999px;margin-bottom:10px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca__sello{width:38px;height:38px;border-radius:12px;background:var(--negro);display:grid;place-items:center}
+.marca__sello svg{width:22px;color:#fff}
+.marca b{display:block;font:400 17px/1 var(--f-urb);color:var(--negro);letter-spacing:.04em}
+.marca small{font:500 10px var(--f-sf);color:var(--suave);letter-spacing:.14em;text-transform:uppercase}
+.nav__links{display:none;gap:2px;font:500 13px var(--f-sf)}
+.nav__links a{padding:9px 14px;border-radius:999px;text-decoration:none;transition:background .3s}
+.nav__links a:hover{background:#fff}
+@media(min-width:980px){.nav__links{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font:600 14px/1 var(--f-sf);text-decoration:none;border:0;cursor:pointer;transition:background .3s,box-shadow .5s var(--ease)}
+.btn--cta{background:var(--cta);color:var(--cta-txt);box-shadow:0 10px 30px -12px rgba(7,8,10,.6)}
+.btn--cta:hover{box-shadow:0 18px 44px -12px rgba(11,138,51,.6)}
+.btn--cta .ico{width:28px;height:28px;border-radius:50%;background:var(--verde);color:var(--negro);display:grid;place-items:center;transition:transform .5s var(--ease)}
+.btn--cta:hover .ico{transform:rotate(-45deg) scale(1.1)}
+.btn--vidrio{background:var(--vidrio-2);color:var(--negro);border:1px solid var(--linea)}
+.btn--vidrio:hover{background:#fff}
+.btn--sm{min-height:44px;padding:0 8px 0 18px}
+.btn--claro{background:#fff;color:var(--negro)}
+
+/* PORTADA */
+.hero{position:relative;padding:34px 20px 24px;overflow:hidden}
+@media(min-width:980px){.hero{padding:48px 48px 40px}}
+.hero__grid{display:grid;gap:30px}
+@media(min-width:980px){.hero__grid{grid-template-columns:1.15fr .85fr;align-items:end}}
+.nombre{color:var(--negro);margin:16px 0 0}
+.nombre .urb{display:block;font-size:clamp(4.6rem,21vw,10.4rem)}
+.nombre .fina{display:block;font-size:clamp(2.6rem,11vw,5.6rem);line-height:1;color:var(--verde-txt);margin-top:.05em}
+.hero__pie{display:grid;gap:20px;margin-top:22px}
+.hero__pie p{max-width:38ch;font-size:16px}
+.acciones{display:flex;flex-wrap:wrap;gap:10px}
+.retrato{position:relative;width:100%;max-width:420px;margin-inline:auto;aspect-ratio:4/4.8}
+.marco{position:absolute;inset:0;border-radius:40px;padding:9px;background:linear-gradient(160deg,rgba(255,255,255,.9),rgba(255,255,255,.35));border:1px solid var(--linea);box-shadow:0 40px 80px -40px rgba(10,40,20,.5)}
+.marco__foto{width:100%;height:100%;border-radius:32px;overflow:hidden;background:var(--negro)}
+.marco__foto img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.flota{position:absolute;padding:12px 14px;border-radius:18px;font-size:12px;color:var(--suave);background:rgba(255,255,255,.9);border:1px solid var(--linea);box-shadow:0 20px 40px -20px rgba(0,0,0,.3);backdrop-filter:blur(16px)}
+.flota strong{display:block;font:400 26px/1 var(--f-urb);color:var(--negro);margin-bottom:2px}
+.flota.a{top:7%;left:-4%}
+.flota.b{bottom:8%;right:-4%}
+.rec{position:absolute;top:22px;right:24px;font:600 11px var(--f-sf);letter-spacing:.12em;color:#fff;display:flex;gap:6px;align-items:center}
+.rec i{width:8px;height:8px;border-radius:50%;background:var(--verde);box-shadow:0 0 10px var(--verde)}
+
+/* SHOWREEL: se expande con el scroll */
+.reel{padding:60px 0 30px;text-align:center}
+.reel__tit{color:var(--negro);font-size:clamp(2.6rem,10vw,6rem);margin:14px 0 30px}
+.reel__tit .fina{color:var(--verde-txt)}
+.reel__marco{position:relative;width:100%;margin-inline:auto;aspect-ratio:16/9;border-radius:var(--r-l);overflow:hidden;background:radial-gradient(70% 90% at 30% 20%,#173a22,#07080A 70%);box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.reel__marco img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;opacity:.55;filter:grayscale(.3)}
+.reel__ui{position:absolute;inset:0;display:grid;place-items:center;color:#fff}
+.reel__play{width:clamp(64px,10vw,104px);aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(14px);display:grid;place-items:center}
+.reel__tc{position:absolute;left:18px;bottom:16px;font:500 12px var(--f-sf);letter-spacing:.1em}
+.reel__ph{position:absolute;right:16px;bottom:14px}
+
+/* MANIFIESTO: palabras que se encienden */
+.manif{padding:70px 22px}
+@media(min-width:980px){.manif{padding:110px 90px}}
+.manif p{font:500 clamp(1.6rem,4.6vw,3.2rem)/1.15 var(--f-sf);letter-spacing:-.035em;color:var(--negro)}
+.manif em{font-style:italic;font-weight:300;color:var(--verde-txt)}
+.manif b{font:400 1.08em/1 var(--f-urb);text-transform:uppercase;letter-spacing:0}
+
+/* ARSENAL: herramientas, la escena protagonista */
+.arsenal{min-height:100svh;padding:56px 18px;display:grid;align-content:center;justify-items:center;text-align:center}
+.arsenal__fondo{position:absolute;inset:0;pointer-events:none;background:radial-gradient(50% 45% at 50% 55%,rgba(61,245,107,.16),transparent 70%)}
+.arsenal__reja{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;mask:radial-gradient(60% 60% at 50% 50%,#000,transparent)}
+.arsenal__tit{position:relative;color:#fff;font-size:clamp(2.4rem,9vw,5.4rem);margin:14px 0 6px}
+.arsenal__tit .fina{color:var(--verde)}
+.arsenal__nombres{position:relative;height:clamp(3.4rem,13vw,9rem);width:100%;overflow:hidden;margin:10px 0 26px}
+.arsenal__nombres span{position:absolute;inset:0;display:grid;place-items:center;font:400 clamp(3rem,13vw,9rem)/1 var(--f-urb);text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.35);white-space:nowrap}
+.arsenal__nombres span.v{color:var(--verde);-webkit-text-stroke:0}
+.js .arsenal__nombres span{visibility:hidden}
+.no-js .arsenal__nombres span:not(:first-child),.rm .arsenal__nombres span:not(:first-child){display:none}
+.rm .arsenal__nombres span{visibility:visible}
+.iconos{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,2vw,22px);width:min(860px,100%);perspective:1000px}
+.icono{position:relative;aspect-ratio:1;border-radius:clamp(16px,3vw,30px);display:grid;place-items:center;background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);transform-style:preserve-3d}
+.icono img{width:58%;height:58%;object-fit:contain;filter:drop-shadow(0 10px 20px rgba(0,0,0,.5))}
+.icono::after{content:"";position:absolute;inset:-1px;border-radius:inherit;box-shadow:0 0 0 1px var(--verde),0 0 60px -6px var(--verde);opacity:var(--glow,0);transition:opacity .4s}
+.arsenal__pie{position:relative;margin-top:26px;font-size:14px;color:#9AA29C;max-width:44ch}
+
+/* SERVICIOS: luz que sigue al cursor */
+.sec{margin-top:10px;padding:46px 20px}
+@media(min-width:980px){.sec{padding:64px 48px}}
+.titulo{color:var(--negro);font-size:clamp(2.6rem,9vw,5rem);margin:14px 0 30px}
+.titulo .fina{color:var(--verde-txt)}
+.servicios{display:grid;gap:10px}
+@media(min-width:700px){.servicios{grid-template-columns:repeat(2,1fr)}}
+.serv{position:relative;overflow:hidden;padding:24px;min-height:200px;border-radius:var(--r-m);background:var(--negro);color:#AEB5AF;display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}
+.serv::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(260px circle at var(--x,50%) var(--y,0%),rgba(61,245,107,.22),transparent 60%);opacity:0;transition:opacity .4s}
+.serv:hover::before{opacity:1}
+.serv .num{font:500 12px var(--f-sf);letter-spacing:.14em;color:var(--verde)}
+.serv h3{font:400 clamp(1.9rem,4vw,2.6rem)/.95 var(--f-urb);text-transform:uppercase;color:#fff;margin:26px 0 8px}
+.serv p{font-size:14px;max-width:34ch}
+
+/* TRABAJOS */
+.trabajos{display:grid;gap:12px}
+@media(min-width:800px){.trabajos{grid-template-columns:1.3fr 1fr}.trabajo:first-child{grid-row:span 2}}
+.trabajo{position:relative;border-radius:var(--r-m);overflow:hidden;background:var(--negro);min-height:240px;color:#fff;isolation:isolate}
+.trabajo__fondo{position:absolute;inset:0;z-index:-1;background:radial-gradient(80% 90% at 20% 10%,#1d4a2b,#07080A 70%);transition:transform 1s var(--ease)}
+.trabajo:hover .trabajo__fondo{transform:scale(1.06)}
+.trabajo__info{position:absolute;left:18px;right:18px;bottom:16px;display:flex;justify-content:space-between;align-items:end;gap:10px}
+.trabajo h3{font:400 clamp(1.6rem,3.4vw,2.4rem)/1 var(--f-urb);text-transform:uppercase}
+.trabajo p{font-size:12px;color:#AEB5AF}
+.trabajo .ph{position:absolute;top:16px;left:18px}
+.trabajo .play{width:52px;height:52px;flex:none;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);display:grid;place-items:center;transition:transform .5s var(--ease),background .3s}
+.trabajo:hover .play{transform:scale(1.15);background:var(--verde)}
+.trabajo:hover .play path{fill:var(--negro)}
+
+/* PROCESO: tarjetas que se apilan */
+.pasos{display:grid;gap:12px}
+.paso{position:sticky;top:90px;padding:28px 24px;border-radius:var(--r-m);background:#fff;border:1px solid var(--linea-2);box-shadow:0 -20px 40px -30px rgba(0,0,0,.25);display:grid;gap:12px}
+@media(min-width:800px){.paso{grid-template-columns:200px 1fr;align-items:center;padding:36px 40px}}
+.paso:nth-child(2){top:104px}.paso:nth-child(3){top:118px}
+.paso .n{font:400 clamp(4rem,10vw,7rem)/.8 var(--f-urb);color:transparent;-webkit-text-stroke:1.5px var(--verde-txt)}
+.paso h3{font:600 clamp(1.4rem,3vw,2rem)/1.1 var(--f-sf);letter-spacing:-.03em;color:var(--negro);margin-bottom:6px}
+.paso h3 em{font-weight:300;color:var(--verde-txt)}
+
+/* CONTACTO */
+.cierre{padding:70px 20px 40px;text-align:center}
+.cierre__tit{color:#fff;font-size:clamp(4.4rem,20vw,13rem);margin:16px 0 10px}
+.cierre__tit .fina{display:block;color:var(--verde);font-size:.42em;margin-top:.1em}
+.cierre p{color:#9AA29C;max-width:40ch;margin:0 auto 26px}
+.cierre .datos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px;font-size:14px}
+.cierre .datos span{padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.12);overflow-wrap:anywhere}
+.controles{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:14px 16px 4px;font-size:13px;color:var(--suave);text-align:center}
+footer{text-align:center;font-size:12px;color:var(--suave);padding:22px 0 40px}
+
+.js [data-in]{visibility:hidden}
+.rm [data-in]{visibility:visible!important}
+</style>
+</head>
+<body>
+<div class="ambiente" aria-hidden="true"><i class="g1"></i><i class="g2"></i></div>
+<p class="aviso">Hoja de muestra · no se publica</p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="monograma" viewBox="0 0 64 64">
+    <path d="M6 6H58L50 18H22V46H50L58 58H6Z" fill="currentColor"/>
+    <path d="M26 26H36V38H26Z M40 22L55 32L40 42Z" fill="#3DF56B"/>
+  </symbol>
+</svg>
+
+<div class="wrap">
+  <!-- NAV: inicio -->
+  <nav class="nav panel" data-in>
+    <a class="marca" href="#"><span class="marca__sello"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#monograma"/></svg></span>
+      <span><b>ENYERBER</b><small>Video Editor</small></span></a>
+    <span class="nav__links"><a href="#reel">Reel</a><a href="#arsenal">Herramientas</a><a href="#servicios">Servicios</a><a href="#trabajos">Trabajos</a><a href="#proceso">Proceso</a></span>
+    <a class="btn btn--cta btn--sm" href="#contacto" data-magnet>Hablemos <span class="ico"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12L12 4M6 4h6v6"/></svg></span></a>
+  </nav>
+  <!-- NAV: fin -->
+
+  <!-- PORTADA: inicio -->
+  <section class="hero panel" data-portada>
+    <div class="hero__grid">
+      <div>
+        <p class="et" data-in>Editor de video · Motion graphics</p>
+        <h1 class="nombre" data-nombre><span class="urb" data-letras>Enyerber</span><span class="fina" data-in>estrada.</span></h1>
+        <div class="hero__pie" data-in>
+          <p>Cada corte tiene una intención. Transformo tu material en piezas que retienen la atención hasta el último frame.</p>
+          <div class="acciones">
+            <a class="btn btn--cta" href="#contacto" data-magnet>Hablemos de tu proyecto <span class="ico"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12L12 4M6 4h6v6"/></svg></span></a>
+            <a class="btn btn--vidrio" href="#reel">Ver el reel</a>
+          </div>
+        </div>
+      </div>
+      <div class="retrato" data-retrato>
+        <div class="marco" data-marco><div class="marco__foto"><img src="img/enyerber.webp" alt="Enyerber Estrada, editor de video" width="760" height="950" data-foto></div></div>
+        <span class="rec" data-in><i></i>REC</span>
+        <div class="flota a" data-flota><strong><span class="placeholder">[X]+</span></strong>años editando</div>
+        <div class="flota b" data-flota><strong>24 H</strong>tiempo de respuesta</div>
+      </div>
+    </div>
+  </section>
+  <!-- PORTADA: fin -->
+
+  <p class="controles"><button type="button" class="btn btn--vidrio" data-ver-de-nuevo>Ver de nuevo la entrada</button>
+    <span data-aviso-rm hidden>Tienes activado "Reducir movimiento": ves una versión sin desplazamientos.</span></p>
+
+  <!-- SHOWREEL: inicio -->
+  <section class="reel" id="reel">
+    <p class="et">Showreel</p>
+    <h2 class="reel__tit urb" data-titulo><span class="ln">Mira cómo</span><span class="ln"><span class="fina">se siente</span> un corte</span></h2>
+    <div class="reel__marco" data-reel>
+      <img src="img/enyerber.webp" alt="" width="760" height="950">
+      <div class="reel__ui"><span class="reel__play"><svg width="26" height="26" viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z" fill="#fff"/></svg></span></div>
+      <span class="reel__tc" data-tc>00:00:00:00</span>
+      <span class="reel__ph placeholder">[TU SHOWREEL]</span>
+    </div>
+  </section>
+  <!-- SHOWREEL: fin -->
+
+  <!-- MANIFIESTO: inicio -->
+  <section class="manif panel">
+    <p data-manif>Soy <b>serio</b>, callado y obsesionado con mejorar cada día. No edito para llenar segundos: edito para que nadie quiera <em>saltarse uno solo.</em> Ritmo, color y sonido al servicio de tu historia.</p>
+  </section>
+  <!-- MANIFIESTO: fin -->
+
+  <!-- ARSENAL (herramientas): inicio -->
+  <section class="arsenal oscuro" id="arsenal" data-arsenal>
+    <div class="arsenal__fondo"></div><div class="arsenal__reja"></div>
+    <p class="et" style="position:relative">Mi flujo de trabajo</p>
+    <h2 class="arsenal__tit urb">El <span class="fina">arsenal</span></h2>
+    <div class="arsenal__nombres" aria-hidden="true">
+      <span>Premiere Pro</span><span>After Effects</span><span>Photoshop</span><span>Blender</span><span>Claude</span><span class="v">Workflow</span>
+    </div>
+    <div class="iconos" data-iconos>
+      <div class="icono"><img src="img/tools/premiere.webp" alt="Premiere Pro" width="80" height="80"></div>
+      <div class="icono"><img src="img/tools/after-effects.webp" alt="After Effects" width="80" height="80"></div>
+      <div class="icono"><img src="img/tools/photoshop.webp" alt="Photoshop" width="80" height="80"></div>
+      <div class="icono"><img src="img/tools/blender.webp" alt="Blender" width="80" height="80"></div>
+      <div class="icono"><img src="img/tools/claude.svg" alt="Claude" width="80" height="80"></div>
+    </div>
+    <p class="arsenal__pie">Monto en Premiere, animo en After Effects, diseño en Photoshop, modelo en Blender y organizo con Claude.</p>
+  </section>
+  <!-- ARSENAL: fin -->
+
+  <!-- SERVICIOS: inicio -->
+  <section class="sec panel" id="servicios">
+    <p class="et">Lo que hago</p>
+    <h2 class="titulo urb" data-titulo><span class="ln">Servicios <span class="fina">a medida</span></span></h2>
+    <div class="servicios" data-grupo>
+      <article class="serv" data-luz><span class="num">01</span><div><h3>Edición de video</h3><p>Reels, YouTube y anuncios con un ritmo que retiene.</p></div></article>
+      <article class="serv" data-luz><span class="num">02</span><div><h3>Motion graphics</h3><p>Textos, gráficos y transiciones animadas en After Effects.</p></div></article>
+      <article class="serv" data-luz><span class="num">03</span><div><h3>Color y sonido</h3><p>Corrección de color y diseño sonoro para un acabado profesional.</p></div></article>
+      <article class="serv" data-luz><span class="num">04</span><div><h3>3D y miniaturas</h3><p>Elementos 3D en Blender y miniaturas que invitan al clic.</p></div></article>
+    </div>
+  </section>
+  <!-- SERVICIOS: fin -->
+
+  <!-- TRABAJOS: inicio -->
+  <section class="sec panel" id="trabajos">
+    <p class="et">Proyectos</p>
+    <h2 class="titulo urb" data-titulo><span class="ln">Trabajo <span class="fina">seleccionado</span></span></h2>
+    <div class="trabajos" data-grupo>
+      <article class="trabajo"><div class="trabajo__fondo"></div><span class="ph placeholder">[TU VIDEO 1]</span><div class="trabajo__info"><div><h3>[Proyecto]</h3><p>Reel · Motion</p></div><span class="play"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z" fill="#fff"/></svg></span></div></article>
+      <article class="trabajo"><div class="trabajo__fondo"></div><span class="ph placeholder">[TU VIDEO 2]</span><div class="trabajo__info"><div><h3>[Proyecto]</h3><p>YouTube</p></div><span class="play"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z" fill="#fff"/></svg></span></div></article>
+      <article class="trabajo"><div class="trabajo__fondo"></div><span class="ph placeholder">[TU VIDEO 3]</span><div class="trabajo__info"><div><h3>[Proyecto]</h3><p>Publicidad</p></div><span class="play"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z" fill="#fff"/></svg></span></div></article>
+    </div>
+  </section>
+  <!-- TRABAJOS: fin -->
+
+  <!-- PROCESO: inicio -->
+  <section class="sec panel" id="proceso">
+    <p class="et">Mi proceso</p>
+    <h2 class="titulo urb" data-titulo><span class="ln">Cero <span class="fina">improvisación</span></span></h2>
+    <div class="pasos">
+      <div class="paso"><span class="n">01</span><div><h3>Organización <em>y estructura</em></h3><p>Clasifico, sincronizo y optimizo todo el material antes del primer corte.</p></div></div>
+      <div class="paso"><span class="n">02</span><div><h3>Montaje <em>y narrativa</em></h3><p>Controlo la atención con un ritmo dinámico y milimétrico hasta el último frame.</p></div></div>
+      <div class="paso"><span class="n">03</span><div><h3>Pulido <em>y entrega</em></h3><p>Diseño sonoro, gráficos fluidos y color preciso con estándar de industria.</p></div></div>
+    </div>
+  </section>
+  <!-- PROCESO: fin -->
+
+  <!-- CONTACTO: inicio -->
+  <section class="cierre oscuro" id="contacto" style="margin-top:10px">
+    <div class="arsenal__fondo"></div>
+    <p class="et" style="position:relative">Contacto</p>
+    <h2 class="cierre__tit urb" data-cierre><span data-letras>Hablemos</span><span class="fina">de tu próximo proyecto</span></h2>
+    <p style="position:relative">Respondo en menos de 24 horas.</p>
+    <a class="btn btn--claro" href="#" data-magnet style="position:relative">Escríbeme por WhatsApp <span class="ico" style="width:28px;height:28px;border-radius:50%;background:var(--verde);display:grid;place-items:center"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12L12 4M6 4h6v6"/></svg></span></a>
+    <div class="datos" style="position:relative"><span>enyerberestrada23@gmail.com</span><span class="placeholder">[WHATSAPP POR CONFIRMAR]</span><span>Venezuela · remoto</span></div>
+  </section>
+  <!-- CONTACTO: fin -->
+  <footer>Enyerber Estrada · Hoja de muestra de dirección de arte</footer>
+</div>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script>
+addEventListener('DOMContentLoaded', () => {
+const d = document, html = d.documentElement;
+const $ = (s, c = d) => c.querySelector(s), $$ = (s, c = d) => [...c.querySelectorAll(s)];
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+const safe = (fn) => { try { fn(); } catch (e) { console.warn('[muestra]', e); } };
+if (RM) html.classList.add('rm');
+if (!hasGSAP) { html.classList.remove('js'); const r = $('[data-ver-de-nuevo]'); if (r) r.hidden = true; return; }
+gsap.registerPlugin(ScrollTrigger); if (window.SplitText) gsap.registerPlugin(SplitText);
+ScrollTrigger.config({ ignoreMobileResize: true });
+const M = { ease: 'expo.out', snap: 'power4.out', cut: 'power4.inOut' };
+const tc = (s) => { const f = Math.floor(s * 24), p = (n) => String(n).padStart(2, '0');
+  return `${p(Math.floor(f / 86400))}:${p(Math.floor(f / 1440) % 60)}:${p(Math.floor(f / 24) % 60)}:${p(f % 24)}`; };
+
+safe(() => {
+  if (RM || !window.Lenis) return;
+  const lenis = new Lenis({ lerp: 0.08 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((t) => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+});
+
+// letras sueltas para la tipografía urbana
+const letras = (el) => window.SplitText ? SplitText.create(el, { type: 'chars', mask: 'chars' }).chars : [el];
+
+/* ---------- PORTADA ---------- */
+let chHero = null;
+function firmaPortada() {
+  const P = '[data-portada]';
+  if (!chHero) chHero = letras($(`${P} [data-letras]`));
+  const tl = gsap.timeline({ defaults: { ease: M.ease } });
+  tl.set('[data-in]', { autoAlpha: 0 })
+    .set(chHero, { yPercent: 105, rotate: 8, transformOrigin: '0% 100%' })
+    .set(`${P} [data-marco]`, { clipPath: 'inset(50% 0% 50% 0% round 40px)' })
+    .set(`${P} [data-foto]`, { scale: 1.45 })
+    .set(`${P} [data-flota]`, { autoAlpha: 0, y: 30, scale: .9 })
+    // 1. corte de cámara: la foto se abre como obturador
+    .to(`${P} [data-marco]`, { clipPath: 'inset(0% 0% 0% 0% round 40px)', duration: 1.2, ease: M.cut, clearProps: 'clipPath' })
+    .to(`${P} [data-foto]`, { scale: 1, duration: 2, ease: 'expo.out' }, '<')
+    // 2. tu nombre sube letra por letra, desde el centro
+    .to(chHero, { yPercent: 0, rotate: 0, duration: 1.1, stagger: { each: .045, from: 'center' } }, '-=1.5')
+    .fromTo(`${P} .fina[data-in]`, { autoAlpha: 0, x: -40, filter: 'blur(10px)' }, { autoAlpha: 1, x: 0, filter: 'blur(0px)', duration: 1.1, clearProps: 'filter' }, '-=.7')
+    .fromTo(`${P} .et[data-in], ${P} .hero__pie, ${P} .rec`, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .9, stagger: .08 }, '-=.8')
+    .to(`${P} [data-flota]`, { autoAlpha: 1, y: 0, scale: 1, duration: 1, stagger: .12, ease: 'back.out(1.6)' }, '-=.7')
+    .fromTo('.nav[data-in]', { autoAlpha: 0, y: -20 }, { autoAlpha: 1, y: 0, duration: .9 }, '-=1.2');
+  tl.add(() => gsap.to(`${P} [data-flota]`, { y: -10, duration: 2.8, ease: 'sine.inOut', yoyo: true, repeat: -1, stagger: .7, overwrite: 'auto' }));
+  return tl;
+}
+safe(() => {
+  const repetir = $('[data-ver-de-nuevo]'), aviso = $('[data-aviso-rm]');
+  if (RM) {
+    if (aviso) aviso.hidden = false;
+    repetir.addEventListener('click', () => gsap.fromTo('[data-portada] [data-in], [data-portada] [data-flota]', { autoAlpha: 0 }, { autoAlpha: 1, duration: .5, stagger: .08, ease: 'none' }));
+    return;
+  }
+  let tl = null;
+  const rescate = setTimeout(() => gsap.set('[data-in]', { autoAlpha: 1 }), 4500);
+  Promise.race([d.fonts ? d.fonts.ready : Promise.resolve(), new Promise((r) => setTimeout(r, 1200))])
+    .then(() => { tl = firmaPortada(); clearTimeout(rescate); });
+  d.addEventListener('pointerdown', () => { if (tl && tl.progress() < 1) tl.progress(1); }, { once: true });
+  repetir.addEventListener('click', () => { if (tl) { window.scrollTo(0, 0); tl.restart(); } });
+  // al bajar, tu nombre se aleja y la foto sube (parallax)
+  gsap.to('[data-nombre]', { yPercent: -18, ease: 'none', scrollTrigger: { trigger: '[data-portada]', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('[data-retrato]', { yPercent: -10, ease: 'none', scrollTrigger: { trigger: '[data-portada]', start: 'top top', end: 'bottom top', scrub: true } });
+});
+
+/* ---------- títulos: líneas que suben con giro ---------- */
+safe(() => {
+  if (RM) return;
+  $$('[data-titulo]').forEach((t) => {
+    const lines = window.SplitText ? SplitText.create(t, { type: 'lines', mask: 'lines' }).lines : [t];
+    gsap.from(lines, { yPercent: 110, rotate: 3, transformOrigin: '0 100%', duration: 1.2, stagger: .1, ease: M.ease, scrollTrigger: { trigger: t, start: 'top 85%' } });
+  });
+  $$('[data-grupo]').forEach((g) => gsap.from(g.children, { y: 80, autoAlpha: 0, rotateX: -12, transformPerspective: 900, duration: 1.2, stagger: .1, ease: M.ease, scrollTrigger: { trigger: g, start: 'top 85%' } }));
+});
+
+/* ---------- SHOWREEL: crece hasta llenar la pantalla (estilo Apple) ---------- */
+safe(() => {
+  const r = $('[data-reel]'), t = $('[data-tc]'), o = { s: 0 };
+  if (RM) return;
+  const tl = gsap.timeline({ scrollTrigger: { trigger: r, start: 'top 90%', end: 'center 55%', scrub: 1 } });
+  tl.fromTo(r, { width: '62%', borderRadius: 60 }, { width: '100%', borderRadius: 32, ease: 'none' })
+    .fromTo($('img', r), { scale: 1.4 }, { scale: 1, ease: 'none' }, 0)
+    .to(o, { s: 12, ease: 'none', onUpdate: () => { t.textContent = tc(o.s); } }, 0);
+});
+
+/* ---------- MANIFIESTO: palabras que se encienden con el scroll ---------- */
+safe(() => {
+  if (RM || !window.SplitText) return;
+  const words = SplitText.create('[data-manif]', { type: 'words' }).words;
+  gsap.fromTo(words, { opacity: .12 }, { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: { trigger: '[data-manif]', start: 'top 80%', end: 'bottom 45%', scrub: true } });
+});
+
+/* ---------- ARSENAL: la escena protagonista ---------- */
+safe(() => {
+  const sec = $('[data-arsenal]'), iconos = $$('.icono', sec), nombres = $$('.arsenal__nombres span', sec);
+  if (RM) { iconos.forEach((i) => i.style.setProperty('--glow', 1)); return; }
+  const n = iconos.length;
+  // 1. los íconos llegan desde la profundidad, dispersos y girando
+  const tl = gsap.timeline({ defaults: { ease: 'none' } });
+  tl.fromTo(iconos, {
+      x: (i) => (i - (n - 1) / 2) * -90, y: (i) => [-160, 120, -40, 150, -130][i], z: -900,
+      rotateX: (i) => [50, -40, 30, -55, 45][i], rotateY: (i) => [-60, 40, -20, 55, -35][i],
+      scale: .4, autoAlpha: 0, filter: 'blur(16px)' },
+    { x: 0, y: 0, z: 0, rotateX: 0, rotateY: 0, scale: 1, autoAlpha: 1, filter: 'blur(0px)', duration: 1.4, stagger: .12, ease: 'expo.out' })
+    .set(nombres[0], { visibility: 'visible' }, '<');
+  // 2. un corte por herramienta: el ícono salta, brilla y su nombre gigante entra
+  iconos.forEach((ic, i) => {
+    const at = 1.6 + i * .9;
+    tl.to(ic, { y: -26, scale: 1.14, duration: .35, ease: 'power3.out', '--glow': 1 }, at)
+      .fromTo(nombres[i], { yPercent: 100, visibility: 'visible' }, { yPercent: 0, duration: .45, ease: M.snap }, at)
+      .to(nombres[i], { yPercent: -100, duration: .4, ease: 'power3.in' }, at + .6)
+      .to(ic, { y: 0, scale: 1, duration: .4, ease: 'power3.inOut', '--glow': .35 }, at + .6);
+  });
+  // 3. cierre: todos encendidos y la palabra en verde
+  const fin = 1.6 + n * .9;
+  tl.fromTo(nombres[n], { yPercent: 100, visibility: 'visible' }, { yPercent: 0, duration: .5, ease: M.snap }, fin)
+    .to(iconos, { '--glow': 1, y: -8, duration: .5, stagger: .05, ease: 'power3.out' }, fin)
+    .to(iconos, { y: 0, duration: .6, stagger: .05, ease: 'power3.inOut' }, fin + .5);
+  // la intro de los íconos la oculta; el estado inicial se fija desde el principio
+  tl.progress(0);
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 900px)', () => {
+    // escritorio: la escena se queda fija y el scroll la reproduce
+    ScrollTrigger.create({ trigger: sec, start: 'top top', end: '+=220%', pin: true, scrub: 1, animation: tl });
+    return () => { tl.scrollTrigger && tl.scrollTrigger.kill(); };
+  });
+  mm.add('(max-width: 899px)', () => {
+    // celular: sin fijar, se reproduce sola al entrar
+    tl.pause(0);
+    ScrollTrigger.create({ trigger: sec, start: 'top 65%', once: true, onEnter: () => tl.timeScale(1.1).play() });
+  });
+  // ícono que se inclina hacia el cursor
+  if (FINE) iconos.forEach((ic) => {
+    const rx = gsap.quickTo(ic, 'rotationX', { duration: .6, ease: 'power3.out' }), ry = gsap.quickTo(ic, 'rotationY', { duration: .6, ease: 'power3.out' });
+    ic.addEventListener('pointermove', (e) => { const b = ic.getBoundingClientRect();
+      ry(((e.clientX - b.left) / b.width - .5) * 30); rx(-((e.clientY - b.top) / b.height - .5) * 30); });
+    ic.addEventListener('pointerleave', () => { rx(0); ry(0); });
+  });
+});
+
+/* ---------- luz que sigue al cursor en servicios ---------- */
+safe(() => {
+  if (!FINE) return;
+  $$('[data-luz]').forEach((c) => c.addEventListener('pointermove', (e) => { const b = c.getBoundingClientRect();
+    c.style.setProperty('--x', `${e.clientX - b.left}px`); c.style.setProperty('--y', `${e.clientY - b.top}px`); }));
+});
+
+/* ---------- proceso: la tarjeta de abajo empuja y achica a la anterior ---------- */
+safe(() => {
+  if (RM) return;
+  const pasos = $$('.paso');
+  pasos.slice(0, -1).forEach((p, i) => gsap.to(p, { scale: .94, filter: 'brightness(.92)', ease: 'none',
+    scrollTrigger: { trigger: pasos[i + 1], start: 'top 90%', end: 'top 30%', scrub: true } }));
+});
+
+/* ---------- cierre: HABLEMOS entra letra por letra ---------- */
+safe(() => {
+  if (RM) return;
+  const ch = letras($('[data-cierre] [data-letras]'));
+  gsap.from(ch, { yPercent: 110, rotate: -10, duration: 1.2, stagger: { each: .05, from: 'start' }, ease: M.ease, scrollTrigger: { trigger: '[data-cierre]', start: 'top 80%' } });
+});
+
+/* ---------- botones magnéticos ---------- */
+safe(() => {
+  if (RM || !FINE) return;
+  $$('[data-magnet]').forEach((b) => {
+    const x = gsap.quickTo(b, 'x', { duration: .5, ease: 'power3.out' }), y = gsap.quickTo(b, 'y', { duration: .5, ease: 'power3.out' });
+    b.addEventListener('pointermove', (e) => { const r = b.getBoundingClientRect(); x((e.clientX - r.left - r.width / 2) * .3); y((e.clientY - r.top - r.height / 2) * .4); });
+    b.addEventListener('pointerleave', () => { x(0); y(0); });
+  });
+});
+});
+</script>
+</body>
+</html>
