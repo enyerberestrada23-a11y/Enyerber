@@ -1,0 +1,16 @@
+KIT DE EDICIÓN · REELS CON CLAUDE · Viegas Estudio
+==================================================
+
+Qué hay dentro:
+  · Prompts-reels-con-Claude.md          los 17 prompts de la guía, listos para copiar
+  · Notas para dirigir a Claude.txt        las notas que mejor funcionan en cada pasada
+  · Guía de estilo de ejemplo.md           mi guía de estilo terminada, para inspirarte o usarla tal cual
+  · SynthFlow Studio · música y efectos    ábrelo en Chrome: genera música (Synthwave 80s o Lo-Fi)
+                                           y efectos (whoosh, impacto, riser, clic, glitch, braaam) en WAV
+
+Cómo usarlo:
+  1. Instala la skill (editar-reels-claude.zip, en la misma publicación).
+  2. Sigue la guía paso a paso: https://viegasestudio.com/guia-reels/
+  3. Copia los prompts de aquí cuando la guía te lo diga.
+
+Puedes usarlo en tus vídeos. No lo revendas. © Viegas Estudio

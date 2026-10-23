@@ -1,0 +1,14 @@
+NOTAS QUE FUNCIONAN PARA DIRIGIR A CLAUDE
+=========================================
+Cópialas tal cual en el chat cuando veas la vista previa de cada pasada.
+Cada nota se aplica a todo el vídeo, no solo a ese momento.
+
+· Encuadre: Ese gráfico me tapa la cara. Súbelo y deja mi cara libre.
+· Limpieza: Hay demasiadas cosas en pantalla. Una idea cada vez.
+· Sincronía: El gráfico entra tarde. Adelántalo 3 fotogramas.
+· Subtítulos: Los subtítulos van muy rápido. Cada uno, al menos 0,4 s.
+· Estilo: Esto no sigue mi guía de estilo. Revísala y corrige colores y fuentes.
+· Sonido: Los efectos están muy fuertes. Bájalos a la mitad.
+· Gancho: Que el gancho pegue más: primera palabra más grande y un golpe en el primer fotograma.
+
+· Atajo: Rehaz solo de 0:04 a 0:07. Deja el resto exactamente como está.
